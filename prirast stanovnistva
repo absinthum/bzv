@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
+int main() {
+	printf("N\n");
+	int n = 0, a[MAX], p, m[MAX], l[MAX];
+	double r, t, k;
+	scanf("%d", &n);
+	printf("br god\n");
+	scanf("%d", &p);
+	for (int i = 0; i < n; i++) {
+			scanf("%d", &a[i]);
+			m[i] = a[i]; 
+			l[i] = a[i];
+	}
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < p; j++) {
+			r = rand();
+			t = (double)RAND_MAX;
+			k = ((r / t) * 2 - 1);
+			m[i] += (l[i] * k / 100);
+			if (m[i] < 0) {
+				m[i] = 0;
+				continue;
+			}
+		}
+	}
+	// ispis
+	for (int i = 0; i < n; i++) {
+		printf("%d %d \n", a[i], m[i]);
+	}
+	getchar();
+	getchar();
+	getchar();
+}
