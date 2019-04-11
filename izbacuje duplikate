@@ -1,0 +1,29 @@
+#include <stdio.h>
+#define MAX 100
+int main() {
+	printf("N\n");
+	int n = 0, a[MAX], p[MAX];
+	int b;
+	scanf("%d", &n);
+	// popunjavanje niza sa TRUE
+	for (int i = 0; i < n; i++) {
+		p[i] = 1;
+	}
+	// unos
+	for (int i = 0; i < n; i++) {
+		scanf("%d", a + i);
+		// ako unetog elementa ima u prethodnim elementima bice preskocen u ispisu
+		for (int k = 0; k < i; k++) {
+			if (a[i] == a[k]) {
+				p[i] = 0;
+			}
+		}
+	}
+	// ispis
+	for (int i = 0; i < n; i++) {
+		if (p[i]) printf("%d ", a[i]);
+	}
+	getchar();
+	getchar();
+	getchar();
+}	
