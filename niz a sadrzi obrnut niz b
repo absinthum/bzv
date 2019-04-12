@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
+
+int main() {
+	int n, l = 0, a[MAX], b[MAX], m;
+	// unos n
+	printf("N1 N2?\n");
+	scanf("%d %d", &n, &m);
+	if (n < 0) exit(0);
+	printf("Unos prvog niza: \n");
+	// unos nizova
+	for (int i = 0; i < n; i++) {
+			scanf("%d", a + i);
+	}
+	printf("Unos drugog niza: \n");
+	for (int i = 0; i < m; i++) {
+		scanf("%d", b + i);
+	}
+	// obrada
+	for (int i = 0; i < n; i++) {
+		int j = 1;
+		while (b[m - j] == a[i + j] && (m - j) >= 0) {
+			l++;
+			j++;
+		}
+	}
+	if (l == m) printf("DA\n");
+	else printf("NE\n");
+	system("pause");
+	return 0;
+}
