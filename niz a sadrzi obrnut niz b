@@ -1,3 +1,9 @@
+/* Napisati program na programskom jeziku C koji vrši određenu obradu nad nizovima celih brojeva.
+Pošto su nizovi statički, mogu da imaju najviše 100 elemenata. 
+Program treba da učitava dva niza i proverava da li se drugi niz, u obrnutom poretku, sadrži u prvom nizu. 
+Program sa standardnog ulaza učitava dimenzije nizova, a zatim i njihove elemente. 
+Nakon toga se vrši zahtevana provera, pri čemuse na standardnom izlazu ispišu nizovi i poruka o uspešnosti provere (videti primer). 
+Postupak se ponavlja sve dok se za dužinu nekog od nizova ne unese nedozvoljena vrednost. */
 #include <stdio.h>
 #include <stdlib.h>
 #define MAX 100
