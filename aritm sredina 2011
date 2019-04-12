@@ -1,0 +1,44 @@
+/* Napisati  program  na  programskom  jeziku  C  koji  ciklično  učitava  i  obrađuje  niz  realnih  brojeva.
+Najpre  se  učita  dužina  niza, a  zatim  se  učitaju  elementi  niza.
+Potom  se  u  učitanom  nizu  pronađu najmanja  i  najveća  vrednost  i  iz  niza  izbace  sva  pojavljivanja  i  jedne  i  druge  vrednosti.
+Na  kraju obrade  potrebno  je  izračunati  i  na  standardni  izlaz  ispisati  aritmetičku  sredinu  preostalih  elemenata niza.
+Ceo  postupak  učitavanja  i  obrade  niza  ponavljati  sve  dok  se  za  dužinu  niza  ne  unese nedozvoljena vrednost. */
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
+
+int main() {
+	int n, l = 0, a[MAX], b[MAX];
+	// unos n
+	printf("N1?\n");
+	scanf("%d", &n);
+	if (n < 0) exit(0);
+	printf("Unos niza: \n");
+	// unos niza
+	for (int i = 0; i < n; i++) {
+		scanf("%d", a + i);
+	}
+	int tmp;
+	for (int i = 0; i < n; i++) {
+		for (int j = 0; j < n; j++) {
+			if (a[i] < a[j]) {
+				tmp = a[i];
+				a[i] = a[j];
+				a[j] = tmp;
+			}
+		} 
+	}
+	int z = a[0], p = a[n - 1], j = 0;
+	for (int i = 0; i < n; i++) {
+		if (a[i] != p && a[i] != z) {
+			b[j] = a[i];
+			j++;
+		}
+	}
+	for (int i = 0; i < j; i++) {
+		l += b[i];
+	}
+	double m = l / j;
+	printf("%.2f\n", m);
+	system("pause");
+}
