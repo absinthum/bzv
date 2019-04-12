@@ -1,0 +1,25 @@
+/*Napisati program na programskom jeziku C koji na slučajan način generiše dva niza realnih brojeva X i Y zadate dužine koji predstavljaju koordinate tačaka u ravni.
+Prvo se unese dužina nizova, a zatim se generišu koordinate tačaka u opsegu[0.0, 1.0].
+Nakon generisanja tačaka, iz nizova treba ukloniti sve one tačke koje ne pripadaju krugu jediničnog poluprečnika čiji se centar nalazi u koordinatnom početku.
+Na kraju programa ispisati rezultujuće nizove, tačku po tačku.
+Postupak ponavljati sve dok se za dužinu nizova ne unese nedozvoljena vrednost.*/
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#define MAX 100
+int main() {
+	int n;
+	double a[MAX], b[MAX];
+	printf("Uneti duzinu niza\n");
+	scanf("%d", &n);
+	for (int i = 0; i < n; i++) {
+			a[i] = (rand() / (double)RAND_MAX);
+	}
+	for (int i = 0; i < n; i++) {
+		b[i] = (rand() / (double)RAND_MAX);
+	}
+	for (int i = 0; i < n; i++) {
+		if (pow(a[i], 2) + pow(a[i], 2) < 1) printf("X = %.3f, Y = %.3f\n", a[i], b[i]);
+	}
+	system("pause");
+}
