@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <stdlib.h>
+#define MAX 100
+
+int main() {
+	int a[MAX];
+	int n;
+	printf("N?\n");
+	scanf("%d", &n);
+	if (n < 0) exit(0);
+	printf("Unos\n");
+	for (int i = 0; i < n; i++) {
+		do {
+			scanf("%d", a + i);
+			if (a[i] <= 0) printf("Ponovni unos");
+		} while (a[i] <= 0);
+	}
+	int b[MAX][MAX] = {0};
+	int pr[MAX];
+	unsigned m = 1;
+	for (int i = 0; i < n; i++) {
+		m = 1;
+		pr[i] = a[i];
+		for (int j = 0; j < 32; j++) {
+			b[i][j] = a[i] % 2;
+			a[i] >>= 1;
+		}
+	}
+	for (int i = 0; i < n; i++) {
+		for (int j = 32; j > 0; j--) {
+			if (b[i][j]) printf(" 2 ^ %d ", j);
+		// fali kod za pisanje pluseva ovde
+		}
+		if (pr[i] % 2) printf(" 2 ^ 0");
+		printf("\n");
+	}
+	system("pause");
+	return 0;
+}
