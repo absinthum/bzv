@@ -1,5 +1,5 @@
-/*Napisati program na programskom jeziku C koji vrši određenu obradu nad dva niza celih brojeva jednake dužine(najviše 100 elemenata). 
-Program treba da utvrdi i ispiše da li je prvi učitani niz moguće dobiti rotacijom drugog učitanog niza za odgovarajući broj mesta udesno, 
+/*Napisati program na programskom jeziku C koji vrši određenu obradu nad dva niza celih brojeva jednake dužine(najviše 100 elemenata).
+Program treba da utvrdi i ispiše da li je prvi učitani niz moguće dobiti rotacijom drugog učitanog niza za odgovarajući broj mesta udesno,
 kao i broj mestaza koji ga je potrebno rotirati.
 Program najpre treba da učita dimenziju nizova, zatim i same nizove.Na kraju, program treba da ispiše na standardnom izlazu ulazne nizove i rezultat provere.
 Postupak ponavljati sve dok se za dužinu nizova ne unese nedozvoljena vrednost. */
@@ -31,10 +31,12 @@ int main() {
 	for (j = i; j < n; j++) {
 		if (b[j] == a[l++]) p++;
 	}
+	m = l;
 	for (j = 0; j < i; j++) {
 		if (b[j] == a[l++]) p++;
 	}
-	if (p == n) printf("DA\n");
+	// treba srediti gramaticki
+	if (p == n) printf("Niz A se moze dobiti pomeranjem niza B za %d mesta udesno\n", m);
 	else printf("NE\n");
 	system("pause");
 	return 0;
